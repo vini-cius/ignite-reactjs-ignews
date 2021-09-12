@@ -12,6 +12,8 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
       //metadata
     });
 
+    console.log(process.env.STRIPE_SUCCESS_URL)
+
     const stripeCheckoutSession = await stripe.checkout.sessions.create({
       customer: stripeCustomer.id,
       payment_method_types: ["card"],
@@ -20,12 +22,12 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
         {
           price: "price_1JXyLsAlctu1zLFiWLetVm3D",
           quantity: 1,
-          mode: "subscription",
-          allow_promotion_codes: true,
-          sucess_url: process.env.STRIPE_SUCCESS_URL,
-          cancel_url: process.env.STRIPE_CANCEL_URL,
         }
-      ]
+      ],
+      allow_promotion_codes: true,
+      mode: "subscription",
+      success_url: process.env.STRIPE_SUCCESS_URL,
+      cancel_url: process.env.STRIPE_CANCEL_URL,
     });
 
     return response.status(200).json({
