@@ -3,11 +3,11 @@
 Ignews é um portal de assinatura de notícias do mundo React desenvolvido com Next.js no curso Ignite da Rocketseat.
 
 <p align="center">
-  <img src=".github/ignews.png" width="35%" alt="Ignews"/>
+  <img src=".github/ignews.png" alt="Ignews"/>
 
   <br/>
 
-  <img src=".github/posts.png" width="20%" alt="Ignews Posts"/>
+  <img src=".github/posts.png" alt="Ignews Posts"/>
 </p>
 
 <br/>
